@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Create a table</title>
+    <style>
+        input {
+            background-color: rgb(239, 239, 232);
+            height: 33px;
+            width: 50%;
+        }
+
+        button {
+            width: 100px;
+            height: 33px;
+
+        }
+
+        .headerSection {
+            border: 0.1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            border-collapse: collapse;
+            background-color: rgba(249, 10, 10, 0.9);
+        }
+
+        ul {
+            margin: 5px;
+            padding: 0;
+        }
+
+        /* Style the list items */
+        ul li {
+            cursor: pointer;
+            position: relative;
+            padding: 12px 8px 12px 40px;
+            list-style-type: none;
+            background: #ede8e8;
+            font-size: 18px;
+            transition: 0.2s;
+
+            user-select: none;
+        }
+
+        ul li:hover {
+            background: #828181;
+        }
+
+
+        ul li.checked {
+            background: #918f8f;
+            color: #fae9e9;
+            text-decoration: line-through;
+        }
+
+        ul li.checked::before {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            border-width: 0 2px 2px 0;
+            top: 10px;
+            left: 16px;
+            transform: rotate(50deg);
+            height: 15px;
+            width: 7px;
+        }
+
+        .close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 10px 12px 10px 16px;
+            font-weight: 900;
+        }
+
+        .close:hover {
+            background-color: #e9736a;
+            color: white;
+        }
+    </style>
+    <script src="./jquery-3.7.1.js"></script>
+</head>
+
+<body>
+    <div class="headerSection ">
+        <h1 class="margin-top: 40px;">My To Do List</h1>
+        <input type="text" id="myInput" placeholder="Title...">
+        <button id="create-button">Add</button>
+        
+        <button type="button" style="width: 150px;" id="saveJSON">Save JSON</button>
+        <button type="button" style="width: 150px;" id="importJSON">Import JSON</button>
+
+    </div>
+    <ul id="todoData">
+
+    </ul>
+
+
+    <script src="./ToDoApp.js" >
+    </script>
+
+</body>
+
+</html>
